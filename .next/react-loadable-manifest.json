@@ -1,0 +1,15 @@
+{
+  "app\\[locale]\\(with-header)\\news\\editor\\page.tsx -> @/app/[locale]/(with-header)/news/editor/editor": {
+    "id": 6734,
+    "files": [
+      "static/chunks/136-aeb33694b82de400.js",
+      "static/chunks/722-023f52621e7493f8.js",
+      "static/chunks/619-8e5aa08e14a5ed30.js",
+      "static/chunks/576-4bf4c509805a5536.js",
+      "static/chunks/802-631258b9055d746c.js",
+      "static/chunks/406-3de280c3227037fd.js",
+      "static/chunks/560-efad5d409d317732.js",
+      "static/chunks/734-f6dd3e8fc6727589.js"
+    ]
+  }
+}
