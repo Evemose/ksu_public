@@ -46,18 +46,15 @@
       "static/chunks/139-af43aaccdb21e403.js",
       "static/chunks/743-39cbb829ef91c4a3.js",
       "static/chunks/406-3de280c3227037fd.js",
-      "static/chunks/app/[locale]/page-2ff1331e37e372c7.js"
+      "static/chunks/app/[locale]/page-5edbb714458b7826.js"
     ],
-    "/[locale]/(with-header)/contacts/page": [
+    "/[locale]/(with-header)/news/editor/page": [
       "static/chunks/webpack-e94805add1d601f8.js",
       "static/chunks/fd9d1056-520651ce953aea9f.js",
       "static/chunks/23-ac977d853e4dc4d6.js",
       "static/chunks/main-app-4db90603c74da6df.js",
       "static/chunks/508-ad480061054c311f.js",
-      "static/chunks/136-aeb33694b82de400.js",
-      "static/chunks/619-8e5aa08e14a5ed30.js",
-      "static/chunks/576-4bf4c509805a5536.js",
-      "static/chunks/app/[locale]/(with-header)/contacts/page-31b7bd8de3578c19.js"
+      "static/chunks/app/[locale]/(with-header)/news/editor/page-9f63a353434505fa.js"
     ],
     "/[locale]/(with-header)/layout": [
       "static/chunks/webpack-e94805add1d601f8.js",
@@ -70,14 +67,6 @@
       "static/chunks/743-39cbb829ef91c4a3.js",
       "static/chunks/app/[locale]/(with-header)/layout-cdc97aa130f33155.js"
     ],
-    "/[locale]/(with-header)/news/editor/page": [
-      "static/chunks/webpack-e94805add1d601f8.js",
-      "static/chunks/fd9d1056-520651ce953aea9f.js",
-      "static/chunks/23-ac977d853e4dc4d6.js",
-      "static/chunks/main-app-4db90603c74da6df.js",
-      "static/chunks/508-ad480061054c311f.js",
-      "static/chunks/app/[locale]/(with-header)/news/editor/page-9f63a353434505fa.js"
-    ],
     "/[locale]/(with-header)/news/page": [
       "static/chunks/webpack-e94805add1d601f8.js",
       "static/chunks/fd9d1056-520651ce953aea9f.js",
@@ -89,6 +78,17 @@
       "static/chunks/139-af43aaccdb21e403.js",
       "static/chunks/407-7d587aa3a9b49524.js",
       "static/chunks/app/[locale]/(with-header)/news/page-6240cef3b5ac3a96.js"
+    ],
+    "/[locale]/(with-header)/contacts/page": [
+      "static/chunks/webpack-e94805add1d601f8.js",
+      "static/chunks/fd9d1056-520651ce953aea9f.js",
+      "static/chunks/23-ac977d853e4dc4d6.js",
+      "static/chunks/main-app-4db90603c74da6df.js",
+      "static/chunks/508-ad480061054c311f.js",
+      "static/chunks/136-aeb33694b82de400.js",
+      "static/chunks/619-8e5aa08e14a5ed30.js",
+      "static/chunks/576-4bf4c509805a5536.js",
+      "static/chunks/app/[locale]/(with-header)/contacts/page-31b7bd8de3578c19.js"
     ],
     "/[locale]/(with-header)/news/[id]/page": [
       "static/chunks/webpack-e94805add1d601f8.js",
