@@ -7,12 +7,12 @@ services:
             context: .
             network: host
         ports:
-            - "8080:8080"
-        env_file: ./.env-back
+            - 8080:8080
+        env_file: .env-back
         depends_on:
             - db
         extra_hosts:
-            - "host.docker.internal:host-gateway"
+            - host.docker.internal:host-gateway
     
     frontend:
         container_name: frontend
@@ -21,21 +21,21 @@ services:
             context: .
             network: host
         ports:
-            - "3000:3000"
+            - 3000:3000
         environment:
             - NEXT_PUBLIC_API_URL=http://host.docker.internal:8080
         depends_on:
             - backend
         extra_hosts:
-            - "host.docker.internal:host-gateway"
+            - host.docker.internal:host-gateway
     
     db:
         image: postgres
         ports:
-            - "5432:5432"
+            - 5432:5432
         environment:
             POSTGRES_USER: ${POSTGRES_USER}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
             POSTGRES_DB: ${POSTGRES_DB}
         extra_hosts:
-            - "host.docker.internal:host-gateway"
+            - host.docker.internal:host-gateway
