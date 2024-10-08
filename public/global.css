@@ -103,7 +103,7 @@ html, body {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50%));
     }
 }
 
@@ -191,6 +191,16 @@ html, body {
         font-size: 22px !important;
     }
 
+}
+
+@keyframes change-bg {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: #FEFFE6;
+    }
 }
 
 
