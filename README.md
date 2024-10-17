@@ -1,3 +1,8 @@
+run the project:
+```bash
+docker compose up -d --build
+```
+
 ### Interaction with the database
 Automatic database backup is set by default (it is triggered daily at midnight UTC+0).
 Automatic deletion of backups that are more than 14 days old (deletion occurs only if the backup is triggered).
@@ -7,10 +12,10 @@ To change:
 
 manual backup of the database:
 ```bash
-docker-compose exec db backup
+docker compose exec db backup
 ```
 
 restore the database from the backup file:
 ```bash
-docker-compose exec db restore <docker_path_to_file/(*.tar.gz)>
+docker compose exec db restore <docker_path_to_file/(*.tar.gz)>
 ```
