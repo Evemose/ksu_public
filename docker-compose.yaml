@@ -1,3 +1,15 @@
+networks:
+    db-backend:
+        driver: bridge
+        name: ksu_news.db-backend
+    backend-frontend:
+        driver: bridge
+        name: ksu_news.backend-frontend
+
+volumes:
+    ksu_news.postgres.data:
+        name: ksu_news.postgres.data
+
 services:
     backend:
         container_name: backend
@@ -5,39 +17,53 @@ services:
         build:
             dockerfile: Dockerfile.back
             context: .
-            network: host
         ports:
             - "8080:8080"
-        env_file: .env-back
+        env_file:
+            - .env-back
+        networks:
+            - db-backend
+            - backend-frontend
         depends_on:
             - db
-        extra_hosts:
-            - host.docker.internal:host-gateway
-    
+        restart: always
+
     frontend:
         container_name: frontend
+        image: ksu_news.frontend
         build:
             dockerfile: Dockerfile.front
             context: .
-            network: host
         ports:
             - "3000:3000"
+        networks:
+            - backend-frontend
         environment:
             - NEXT_PUBLIC_API_URL=https://dev.ksu.ks.ua/back
             - SERVER_API_URL=http://host.docker.internal:8080
         depends_on:
             - backend
-        extra_hosts:
-            - host.docker.internal:host-gateway
-    
+        restart: always
+
     db:
-        image: postgres
         container_name: db
+        image: ksu_news.postgres
+        build:
+            context: ./postgres
+            args:
+                - DB_BACKUP_PATH=${DB_BACKUP_PATH}
+                - AUTOBACKUP_TIME=${AUTOBACKUP_TIME}
+        env_file:
+            - .env
+        restart: unless-stopped
+        networks:
+            - db-backend
         ports:
-            - "5433:5432"
+            - "5432:5432"
         environment:
             POSTGRES_USER: ${POSTGRES_USER}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
             POSTGRES_DB: ${POSTGRES_DB}
-        extra_hosts:
-            - host.docker.internal:host-gateway
+        volumes:
+            - ksu_news.postgres.data:${DB_DATA_PATH}
+            - ./postgres/backups/:${DB_BACKUP_PATH}/
