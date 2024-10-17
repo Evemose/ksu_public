@@ -46,8 +46,15 @@ services:
         restart: always
 
     db:
-        image: postgres
         container_name: db
+        image: ksu_news.postgres
+        build:
+            context: ./postgres
+            args:
+                - DB_BACKUP_PATH=${DB_BACKUP_PATH}
+                - AUTOBACKUP_TIME=${AUTOBACKUP_TIME}
+        env_file:
+            - .env
         restart: unless-stopped
         networks:
             - db-backend
@@ -59,3 +66,4 @@ services:
             POSTGRES_DB: ${POSTGRES_DB}
         volumes:
             - ksu_news.postgres.data:${DB_DATA_PATH}
+            - ./postgres/backups/:${DB_BACKUP_PATH}/
