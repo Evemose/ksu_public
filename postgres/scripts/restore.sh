@@ -2,13 +2,18 @@
 
 BACKUPFILENAME=$1
 
-if [[ -z "$BACKUPFILENAME" ]]; then
-    echo "Please specify the file"
+error_exit() {
+    echo "$1" 1>&2
     exit 1
-fi
+}
 
-echo "Starting restore Pg from a file ${BACKUPFILENAME}"
+[ -z "$BACKUPFILENAME" ] && error_exit "Please specify the backup file"
 
-gunzip -c ${BACKUPFILENAME} | pg_restore -Ft --clean --if-exists --dbname=${POSTGRES_DB} --username=${POSTGRES_USER} --verbose --single-transaction
+[ ! -f "$BACKUPFILENAME" ] && error_exit "Backup file does not exist: $BACKUPFILENAME"
+[ ! -r "$BACKUPFILENAME" ] && error_exit "Cannot read backup file: $BACKUPFILENAME"
 
-echo "Finished restore of Pg to file ${BACKUPFILENAME}"
+echo "Starting restore Pg from file ${BACKUPFILENAME}"
+
+gunzip -c "$BACKUPFILENAME" | pg_restore -Ft --clean --if-exists --dbname="$POSTGRES_DB" --username="$POSTGRES_USER" --verbose --single-transaction
+
+echo "Finished restore of Pg from file ${BACKUPFILENAME}"
