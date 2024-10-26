@@ -39,7 +39,7 @@ services:
         networks:
             - backend-frontend
         environment:
-            - NEXT_PUBLIC_API_URL=https://dev.ksu.ks.ua/back
+            - NEXT_PUBLIC_API_URL=https://digiuni.kspu.edu/back
             - SERVER_API_URL=http://host.docker.internal:8080
         depends_on:
             - backend
