@@ -2,4 +2,4 @@ FROM openjdk:21-slim
 
 COPY news-0.0.1-SNAPSHOT.jar .
 
-CMD ["java", "-XX:+UseZGC", "-XX:+ZGenerational", "-jar", "news-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-XX:+UseZGC", "-XX:+ZGenerational", "-Xmx4G", "-jar", "news-0.0.1-SNAPSHOT.jar"]
