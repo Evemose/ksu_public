@@ -1,12 +1,12 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/[locale]/(with-header)/about/page": "app/[locale]/(with-header)/about/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
   "/[locale]/(with-header)/news/[id]/page": "app/[locale]/(with-header)/news/[id]/page.js",
   "/[locale]/(with-header)/news/page": "app/[locale]/(with-header)/news/page.js",
-  "/[locale]/page": "app/[locale]/page.js",
   "/[locale]/(with-header)/contacts/page": "app/[locale]/(with-header)/contacts/page.js",
-  "/[locale]/(with-header)/admin/partners/page": "app/[locale]/(with-header)/admin/partners/page.js",
-  "/[locale]/(with-header)/admin/editor/[id]/page": "app/[locale]/(with-header)/admin/editor/[id]/page.js",
   "/[locale]/(with-header)/admin/editor/page": "app/[locale]/(with-header)/admin/editor/page.js",
-  "/[locale]/(with-header)/admin/team-members/page": "app/[locale]/(with-header)/admin/team-members/page.js"
+  "/[locale]/(with-header)/admin/partners/page": "app/[locale]/(with-header)/admin/partners/page.js",
+  "/[locale]/(with-header)/admin/team-members/page": "app/[locale]/(with-header)/admin/team-members/page.js",
+  "/[locale]/(with-header)/admin/editor/[id]/page": "app/[locale]/(with-header)/admin/editor/[id]/page.js"
 }
