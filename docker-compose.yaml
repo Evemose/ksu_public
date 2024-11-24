@@ -28,6 +28,13 @@ services:
             - db
         restart: always
 
+        deploy:
+            resources:
+                reservations:
+                    memory: 2048M
+                limits:
+                    memory: 4096M
+
     frontend:
         container_name: frontend
         image: ksu_news.frontend
