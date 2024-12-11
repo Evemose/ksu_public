@@ -4,4 +4,4 @@ ENV MALLOC_ARENA_MAX=4
 
 COPY news-0.0.1-SNAPSHOT.jar .
 
-CMD ["java", "-XX:+UseZGC", "-XX:+ZGenerational", "-Xmx3G", "-jar", "news-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-XX:+UseG1GC", "-Xmx3G", "-jar", "news-0.0.1-SNAPSHOT.jar"]
